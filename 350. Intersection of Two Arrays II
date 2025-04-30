@@ -1,0 +1,29 @@
+class Solution(object):
+    def intersect(self, nums1, nums2):
+        c1 = {}
+        for num in nums1:
+            if num in c1:
+                 c1[num] += 1
+            else:
+                c1[num] = 1
+            # Dictionary to store the count of each element in nums2
+        c2 = {}
+        for num in nums2:
+            if num in c2:
+                c2[num] += 1
+            else:
+                c2[num] = 1
+        print(c2)
+
+    # Intersection elements
+        set1 = set(nums1)
+        set2 = set(nums2)
+        intersect = set1 & set2 
+        print(intersect)
+
+        output_list = []
+        for element in intersect:
+            min_count = min(c1[element], c2[element])
+            output_list.extend([element] * min_count)
+
+        return output_list
