@@ -1,0 +1,9 @@
+class Solution(object):
+    def containsDuplicate(self,nums):
+        unique_nums = set(nums)
+        original_length = len(nums)
+        unique_length = len(unique_nums)
+        if original_length != unique_length:
+            return True
+        else:
+            return False
